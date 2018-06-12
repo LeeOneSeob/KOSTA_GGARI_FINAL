@@ -2,16 +2,24 @@ package kosta.spring.postIT.model.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import kosta.spring.postIT.model.dto.CrAsgnDTO;
 import kosta.spring.postIT.model.dto.CrFeedbackDTO;
 import kosta.spring.postIT.model.dto.CrSubAsgnDTO;
 
+@Repository
 public class ClassroomDAOImpl implements ClassroomDAO {
-
+	
+	@Autowired
+	SqlSession session;
+	
 	@Override
 	public int insertAsgn(CrAsgnDTO crAsgnDTO) {
 		// TODO Auto-generated method stub
-		return 0;
+		return session.insert("classroomMapper.insertAsgn", crAsgnDTO);
 	}
 
 	@Override

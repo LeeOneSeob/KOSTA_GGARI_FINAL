@@ -2,16 +2,23 @@ package kosta.spring.postIT.model.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import kosta.spring.postIT.model.dao.ClassroomDAO;
 import kosta.spring.postIT.model.dto.CrAsgnDTO;
 import kosta.spring.postIT.model.dto.CrFeedbackDTO;
 import kosta.spring.postIT.model.dto.CrSubAsgnDTO;
 
+@Service
 public class ClassroomServiceImpl implements ClassroomService {
-
+	
+	@Autowired
+	ClassroomDAO classroomDAO;
+	
 	@Override
 	public int insertAsgn(CrAsgnDTO crAsgnDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return classroomDAO.insertAsgn(crAsgnDTO);
 	}
 
 	@Override
