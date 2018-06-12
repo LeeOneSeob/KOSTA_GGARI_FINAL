@@ -10,7 +10,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 
-		return "mentee/classroom/crAsgn/asgnSelectList";
+		return "index";
 	}
 	
 	@RequestMapping("/index")

@@ -4,37 +4,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="classroomMapper">
 	
-	<resultMap type="studentDTO" id="studentDTOMap">
-		<id column="st_no" property="stNo"/>
-		<result column="st_name" property="stName" />
-		<result column="st_age" property="stAge" />
-		<result column="st_addr" property="stAddr" />
-		<result column="st_phone" property="stPhone" />
-	</resultMap>
-	
-	<insert id="insertAsgn" parameterType="crAsgnDTO">
-		insert into student values(#{stNo}, #{stName}, #{stAge}, #{stAddr}, #{stPhone})
-	</insert>
-	
-	<!-- 전체리스트 -->
-	<select id="selectList" resultMap="studentDTOMap">
-		select * from student
-		order by st_no
-	</select>
-	
-	<!-- 학번중복체크 -->
-	<select id="idCheck" parameterType="String" resultMap="studentDTOMap">
-		select * from student where st_no = #{_parameter}
-	</select>
-	
-	<!-- 레코드추가 -->
-	<insert id="insert" parameterType="studentDTO">
-		insert into student values(#{stNo}, #{stName}, #{stAge}, #{stAddr}, #{stPhone})
-	</insert>
-	
-	<!-- 레코드삭제 -->
-	<delete id="delete" parameterType="String">
-		delete from student where st_no = #{_parameter}
-	</delete>
 </mapper> 
  

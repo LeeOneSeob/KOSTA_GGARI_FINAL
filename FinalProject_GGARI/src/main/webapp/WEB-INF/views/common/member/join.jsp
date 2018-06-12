@@ -16,6 +16,10 @@
     .form-join{
    	 margin-bottom: 10px;
     }
+    
+    .gallery-inner{margin-left: 400px} 
+    
+    #gallery{margin-top: 200px; margin-bottom: 200px}
 
     </style>
 
@@ -46,10 +50,8 @@
                                         </div>
                                         <div class="gallery-hover">
                                             <h4><span>멘토</span></h4>
-                                            <p>가입하기</p><br> 
-                                            <div class="gallery-btn">
-                                                <a href="${pageContext.request.contextPath}/joinMento"><i class="fa fa-search"></i></a>
-                                            </div>
+                                            <p> <a href="${pageContext.request.contextPath}/joinMento">가입하기</a></p><br> 
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -62,10 +64,8 @@
                                         </div>
                                         <div class="gallery-hover">
                                             <h4><span>멘티</span></h4> 
-                                            <p>가입하기</p><br>                                    
-                                            <div class="gallery-btn">
-                                                <a href="${pageContext.request.contextPath}/joinMentee"><i class="fa fa-search"></i></a>
-                                            </div>
+                                           <p> <a href="${pageContext.request.contextPath}/joinMentee">가입하기</a></p><br>                                    
+                               
                                         </div>
                                     </div>
                                 </div>
