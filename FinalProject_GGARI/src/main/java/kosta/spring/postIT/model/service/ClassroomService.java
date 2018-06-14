@@ -15,13 +15,13 @@ int insertAsgn(CrAsgnDTO crAsgnDTO);
 	
 	List<CrAsgnDTO> selectAsgnList(String courseCode);
 	
-	CrAsgnDTO selectAsgn(String crAsgnCode);
+	CrAsgnDTO selectAsgn(String crAsgnCode, boolean state);
 	
 	int insertSubAsgn(CrSubAsgnDTO crSubAsgnDTO);
 	
 	int updateSubAsgn(CrSubAsgnDTO crSubAsgnDTO);
 	
-	int deleteSubAsgn(CrSubAsgnDTO crSubAsgnDTO);
+	int deleteSubAsgn(String crSubasgnCode);
 	
 	List<CrSubAsgnDTO> selectSubAngnList(String crAsgnCode);
 	

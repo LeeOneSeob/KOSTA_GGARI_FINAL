@@ -18,86 +18,78 @@ public class ClassroomDAOImpl implements ClassroomDAO {
 	
 	@Override
 	public int insertAsgn(CrAsgnDTO crAsgnDTO) {
-		// TODO Auto-generated method stub
 		return session.insert("classroomMapper.insertAsgn", crAsgnDTO);
 	}
 
 	@Override
 	public int updateAsgn(CrAsgnDTO crAsgnDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.insert("classroomMapper.updateAsgn", crAsgnDTO);
+	}
+	
+	@Override
+	public int readnumUpdate(String crAsgnCode) {
+		return session.update("classroomMapper.rednumUpdate", crAsgnCode);
 	}
 
 	@Override
 	public int deleteAsgn(String crAsgnCode) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.delete("classroomMapper.deleteAsgn", crAsgnCode);
 	}
 
 	@Override
 	public List<CrAsgnDTO> selectAsgnList(String courseCode) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectList("classroomMapper.selectAsgnList", courseCode);
 	}
 
 	@Override
 	public CrAsgnDTO selectAsgn(String crAsgnCode) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("classroomMapper.selectAsgnList", crAsgnCode);
 	}
 
 	@Override
 	public int insertSubAsgn(CrSubAsgnDTO crSubAsgnDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.insert("classroomMapper.insertSubAsgn", crSubAsgnDTO);
 	}
 
 	@Override
 	public int updateSubAsgn(CrSubAsgnDTO crSubAsgnDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.update("classroomMapper.updateSubAsgn", crSubAsgnDTO);
 	}
 
+	//삭제를 cr_subasgn_code로 안하고 DTO로?
 	@Override
-	public int deleteSubAsgn(CrSubAsgnDTO crSubAsgnDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteSubAsgn(String crSubasgnCode) {
+		return session.delete("classroomMapper.deleteSubAsgn", crSubasgnCode);
 	}
 
 	@Override
 	public List<CrSubAsgnDTO> selectSubAngnList(String crAsgnCode) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectList("classroomMapper.selectSubAngnList", crAsgnCode);
 	}
 
 	@Override
 	public CrSubAsgnDTO selectSubAsgn(String crSubasgnCode) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("classroomMapper.selectSubAngnList", crSubasgnCode);
 	}
 
 	@Override
 	public int insertFeedback(CrFeedbackDTO crFeedbackDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.insert("classroomMapper.insertFeedback", crFeedbackDTO);
 	}
 
 	@Override
 	public int updateFeedback(CrFeedbackDTO crFeedbackDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.update("classroomMapper.updateFeedback", crFeedbackDTO);
 	}
 
 	@Override
 	public int deleteFeedback(String crFeedCode) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.delete("classroomMapper.deleteFeedback", crFeedCode);
 	}
 
 	@Override
 	public CrFeedbackDTO selectFeedback(String crSubasgnCode) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("classroomMapper.selectFeedback", crSubasgnCode);
 	}
 
 }
